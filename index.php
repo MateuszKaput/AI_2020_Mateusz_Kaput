@@ -28,7 +28,7 @@ $books = $book->fetch_all();
 	<div class="row">
 		<div class="col-4" style="background-color:orange">
 			<ul class = "nav nav-pills nav-justified">
-				<li><a href = "./index.html">Home</a></li>
+				<li><a href = "./index.php">Home</a></li>
 				<li><a href = "#">Strona 1</a></li>
 				<li><a href = "#">Strona 2</a></li>
 				<li><a href = "#">Strona 3</a></li>
