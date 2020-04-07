@@ -53,12 +53,5 @@ $books = $book->fetch_all();
 		<div class="col-md-2"></div>
 	</div>
 </div>
-
-<div class="tab-content">
-	<div class="tab-pane fade active in" id="home">...</div>
-	<div class="tab-pane fade" id="profile">...</div>
-	<div class="tab-pane fade" id="messages">...</div>
-	<div class="tab-pane fade" id="settings">...</div>
-</div>
 </body>
 </html>
