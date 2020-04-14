@@ -1,8 +1,12 @@
 <?php
 
-session_start();
-
 include_once('../includes/connection.php');
+include_once('../includes/book.php');
+
+$book = new Book;
+$books = $book->fetch_all();
+
+session_start();
 
 if (isset($_SESSION['logged_in'])) {
 	//strona po zalogowaniu
@@ -20,17 +24,18 @@ if (isset($_SESSION['logged_in'])) {
 	<div class="row">
 		<div class="col-4" style="background-color:orange">
 			<ul class = "nav nav-pills nav-justified">
-				<li><a href = "./index.php">Home</a></li>
-				<li><a href = "#">Dodaj książkę</a></li>
-				<li><a href = "#">Spal książkę</a></li>
-				<li><a href = "/admin">Wyloguj</a></li>
+				<li><a href = "./index.php">Powrót na stronę główną</a></li>
+				<li><a href = "./add.php">Dodaj książkę</a></li>
+				<li><a href = "./delete.php">Usuń książkę</a></li>
+				<li><a href = "./logout.php">Wyloguj</a></li>
 			</ul>
 		</div>
-		<div class="col-md-2"></div>
-		<div class="col-md-8">
-		
+		<div class="col-md-0"></div>
+		<div class="col-md-12" style="background-color:white">
+		<h3> Witaj na stronie administracyjnej!</h3>
+		<h4> Tutaj możesz dodawać oraz usuwać książki z bazy danych</h4>
 		</div>
-		<div class="col-md-2"></div>
+		<div class="col-md-0"></div>
 	</div>
 </div>
 </body>
@@ -92,10 +97,14 @@ if (isset($_SESSION['logged_in'])) {
 					<small style="color:aa0000"><?php echo $error; ?></small>
 				<?php } ?>
 				<form action="index.php" method="post" autocomplete="off">
-					<input type="text" name="username" placeholder="Username"/>
-					<input type="password" name="password" placeholder="Password"/>
+					<input type="text" name="username" placeholder="Login"/>
+					<input type="password" name="password" placeholder="Hasło"/>
 					<input type="submit" value="Login"/>
 				</form>
+				<small><a href="createuser.php" style="text-decoration:none">Nie masz konta?</a> </small><br/><br/>
+				<button type="button" class="btn btn-default" aria-label="Left Align">
+				<a href="../index.php" style="text-decoration:none"><span class="glyphicon glyphicon-menu-left" aria-hidden="true">Powrót</span></a>
+				</button>
 			</div>
 			<div class="col-md-3"></div>
 		</div>

@@ -5,7 +5,6 @@ include_once('includes/book.php');
 
 $book = new Book;
 $books = $book->fetch_all();
-
 ?>
 
 
@@ -22,15 +21,13 @@ $books = $book->fetch_all();
 	<div class="row">
 		<div class="col-4" style="background-color:orange">
 			<ul class = "nav nav-pills nav-justified">
-				<li><a href = "./index.php">Home</a></li>
-				<li><a href = "#">Strona 1</a></li>
-				<li><a href = "#">Strona 2</a></li>
-				<li><a href = "#">Strona 3</a></li>
-				<li><a href = "/admin">Logowanie</a></li>
+				<li><a href = "./index.php">Strona główna</a></li>
+				<li><a href = "./admin">Logowanie</a></li>
 			</ul>
 		</div>
-		<div class="col-md-2"></div>
-		<div class="col-md-8" style="background-color:white">
+		<div class="col-md-0"></div>
+		<div class="col-md-12" style="background-color:white">
+		<h3> Zapraszamy do zapoznania się z naszą kolekcją książek!</h3>
 		<ol>
 		<?php foreach ($books as $book){ ?>
 			<li>
@@ -41,7 +38,7 @@ $books = $book->fetch_all();
 			</li>
 		<?php } ?>
 		</div>
-		<div class="col-md-2"></div>
+		<div class="col-md-0"></div>
 	</div>
 </div>
 </body>
