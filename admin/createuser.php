@@ -1,6 +1,6 @@
 <?php
 include_once('../includes/connection.php');
-include_once('./user.php');
+include_once('../includes/user.php');
 
 $user = new User;
 $users = $user->fetch_all();
